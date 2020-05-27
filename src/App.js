@@ -39,7 +39,7 @@ const App = () => {
     {
       id: 1,
       name: "play game",
-      isDone: false,
+      isDone: true,
     },
     {
       id: 2,
@@ -49,7 +49,6 @@ const App = () => {
   ];
 
   const handleSubmit = (task) => {
-    console.log("task name: ", task);
     const newTask = {
       id: Math.floor(Math.random() * Math.floor(1000)),
       name: task,

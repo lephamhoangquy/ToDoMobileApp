@@ -1,10 +1,16 @@
 import React from "react";
-import { IonItem, IonLabel } from "@ionic/react";
+import { IonCheckbox, IonItem, IonLabel } from "@ionic/react";
 
-export const TaskItem = ({ task, index }) => {
-  const { name } = task;
+export const TaskItem = ({ task, index, handleDone }) => {
+  const { name, isDone, id } = task;
   return (
-    <IonItem>
+    <IonItem disabled={isDone}>
+      <IonCheckbox
+        checked={isDone}
+        slot="end"
+        color="primary"
+        onIonChange={() => handleDone(id)}
+      />
       <IonLabel>{index}</IonLabel>
       <IonLabel>{name}</IonLabel>
     </IonItem>
